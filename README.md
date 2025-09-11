@@ -188,13 +188,12 @@ To visualize the stitched point cloud, pose, and trajectory:
 - min_inliers : minimum correspondences for stability
 
 (See dicp_params.yaml for the full list of tunable parameters.)
-
-## Testing
+## 🧪 Testing
        
-    ```bash
-   colcon test --packages-select farness_dicp
-   colcon test-result --verbose        
-    ```
+```bash
+colcon test --packages-select farness_dicp
+colcon test-result --verbose
+```
  
 ## Development Notes
          

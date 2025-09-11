@@ -1,0 +1,29 @@
+# ============================================================
+# File: dicp_params.yaml
+# Project: farness_dicp
+# Role: ROS 2 parameters for Doppler-ICP Stitcher node
+#
+# Description:
+#   Defines runtime parameters for Doppler-ICP LiDAR frame
+#   stitching and motion estimation. Includes filtering,
+#   ICP iterations, weighting factors, and thresholds.
+#
+# Author: Farness AI
+# License: MIT
+# ============================================================
+
+doppler_icp_stitcher:
+  ros__parameters:
+    frames_directory: "/home/farness/Téléchargements/csv_point_clouds"  # Path to CSV LiDAR frames
+    publish_rate: 5               # [Hz] Publishing frequency
+    downsample_factor: 10         # [integer] Keep 1 point out of N for speed
+    max_iterations: 5             # [count] Max ICP iterations per frame
+    lambda_doppler_start: 0.01    # [weight] Initial Doppler term weight
+    lambda_doppler_end: 0.05      # [weight] Final Doppler term weight
+    reject_outliers: true         # [bool] Enable/disable outlier rejection
+    frame_dt: 0.1                 # [s] Time delta between frames
+    outlier_thresh: 1.0           # [m/s] Radial velocity outlier threshold
+    geometric_k: 0.8              # [unitless] Huber constant for geometric residuals
+    doppler_k: 0.01               # [unitless] Huber constant for Doppler residuals
+    min_inliers: 30               # [count] Minimum inliers required for ICP update
+

@@ -1,0 +1,8 @@
+[develop]
+script_dir=$base/lib/farness_dicp
+
+[install]
+install_scripts=$base/lib/farness_dicp
+
+
+

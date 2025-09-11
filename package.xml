@@ -1,0 +1,37 @@
+<!-- ============================================================
+ File: package.xml
+ Project: Doppler ICP ROS 2 Node
+ Role: Defines the ROS 2 package metadata and dependencies
+
+ Description:
+   - Declares package name, version, maintainer, and license
+   - Lists runtime dependencies (rclpy, sensor_msgs, geometry_msgs, tf2_ros)
+   - Lists test dependencies (ament linters, pytest)
+   - Exports build type as ament_python
+
+ Author: Farness AI
+ Copyright: 2025
+============================================================ -->
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>farness_dicp</name>
+  <version>0.0.0</version>
+  <description>TODO: Package description</description>
+  <maintainer email="farness@todo.todo">farness</maintainer>
+  <license>TODO: License declaration</license>
+
+  <depend>rclpy</depend>
+  <depend>sensor_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>tf2_ros</depend>
+
+  <test_depend>ament_copyright</test_depend>
+  <test_depend>ament_flake8</test_depend>
+  <test_depend>ament_pep257</test_depend>
+  <test_depend>python3-pytest</test_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>

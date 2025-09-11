@@ -5,17 +5,18 @@ It leverages radial velocity data to improve alignment accuracy in dynamic envir
 
 ---
 
-##  Table of Contents
-- [Overview](#-overview)
-- [Project Structure](#-project-structure)
-- [Installation](#-installation)
-- [Usage](#-usage)
-- [Visualization in Foxglove Studio](#-visualization-in-foxglove-studio)
-- [Published Topics](#-published-topics)
-- [Parameters](#-parameters)
-- [Testing](#-testing)
-- [Development Notes](#-development-notes)
-- [License](#-license)
+## Table of Contents
+- [Overview](#overview)
+- [Project Structure](#project-structure)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Visualization in Foxglove Studio](#visualization-in-foxglove-studio)
+- [Published Topics](#published-topics)
+- [Parameters](#parameters)
+- [Testing](#testing)
+- [Development Notes](#development-notes)
+- [License](#license)
+
 
 ---
 

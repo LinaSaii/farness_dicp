@@ -198,7 +198,7 @@ To visualize the stitched point cloud, pose, and trajectory:
  
 ## Development Notes
          
--The Doppler-ICP stitching pipeline has been implemented and validated using
+The Doppler-ICP stitching pipeline has been implemented and validated using
 CSV files with the structure:
                              x, y, z, v_radial
 -Each file corresponds to a single LiDAR frame.

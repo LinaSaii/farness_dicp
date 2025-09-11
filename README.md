@@ -95,9 +95,11 @@ CSV files should be stored in a directory specified by the `frames_directory` pa
 3. Confirm installation:
    ```bash
    ros2 pkg list | grep farness_dicp
+   ```
 
 ##   Usage
 ### Option 1 - Run directly with parameters
+  
    
 You can run the node directly and pass parameters from the command line.  
 For example, to load CSV frames from `/home/farness/Téléchargements/csv_point_clouds`:
@@ -106,15 +108,17 @@ For example, to load CSV frames from `/home/farness/Téléchargements/csv_point_
 ros2 run farness_dicp farness_dicp_node \
   --ros-args \
   -p frames_directory:=/home/farness/Téléchargements/csv_point_clouds \
-  -p publish_rate:=10
+  -p publish_rate:=10 ```
 
 Make sure the directory contains .csv LiDAR frames with the format: x, y, z, v_radial
+   ```
 
 
 ### option 2 - Launch via launch file
   
 ```bash
 ros2 launch farness_dicp dicp_stitcher.launch.py
+ ```
 
 ## Visualization in Foxglove Studio
      
@@ -126,10 +130,12 @@ To visualize the stitched point cloud, pose, and trajectory:
       ros2 run farness_dicp farness_dicp_node \
         --ros-args \
         -p frames_directory:=/home/farness/Téléchargements/csv_point_clouds
+    ```
 
 2. **Start the Foxglove bridge in another terminal**
     ```bash
     ros2 run foxglove_bridge foxglove_bridge --port 8765
+     ```
 
 3. **Open Foxglove Studio**
 - Go to Foxglove Studio
@@ -138,6 +144,7 @@ To visualize the stitched point cloud, pose, and trajectory:
 - Load the provided layout file: Go to File → Open Layout…
 - Select: <your_workspace>/ws_new/src/farness_dicp/foxglove/voyant_lidar.json
 
+  
 
 4. **The layout will automatically show**
 - 3D panel: /stitched_cloud (stitched point cloud) and /icp_trajectory (trajectory history)
@@ -147,7 +154,7 @@ To visualize the stitched point cloud, pose, and trajectory:
 - Plots: /linear_acceleration and /angular_velocity (x, y, z)
 
 - Grid layer for spatial reference
-
+    
 ## Published Topics
    
 /stitched_cloud : sensor_msgs/PointCloud2
@@ -187,7 +194,8 @@ min_inliers : minimum correspondences for stability
    ```bash
    colcon test --packages-select farness_dicp
    colcon test-result --verbose      
-
+ ```
+ 
 ## Development Notes
          
 -The Doppler-ICP stitching pipeline has been implemented and validated using

@@ -50,7 +50,7 @@ The `DopplerICPStitcher` is a ROS 2 node that:
 - `scipy`
 - `matplotlib`
 
-Install dependencies using pip:
+**Install dependencies using pip**
 
 ```bash
 pip install numpy pandas open3d rclpy sensor_msgs_py scipy matplotlib

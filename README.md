@@ -73,7 +73,7 @@ CSV files should be stored in a directory specified by the `frames_directory` pa
 ##  Project Structure  
 
 
-<img width="639" height="504" alt="tree" src="https://github.com/user-attachments/assets/47d385dc-1e69-4ca4-9f66-898aecc75cbe" />
+<img width="639" height="504" alt="tree" src="https://github.com/user-attachments/assets/f65b77cb-fd96-4ec5-90f6-dbbf86ce2f0d" />
 
 
 
@@ -97,24 +97,24 @@ CSV files should be stored in a directory specified by the `frames_directory` pa
    ros2 pkg list | grep farness_dicp
 
 ##   Usage
-+ Option 1 - Run directly with parameters
+### Option 1 - Run directly with parameters
    
 You can run the node directly and pass parameters from the command line.  
 For example, to load CSV frames from `/home/farness/Téléchargements/csv_point_clouds`:
 
-   ```bash
-   ros2 run farness_dicp farness_dicp_node \
-       --ros-args \
-         -p frames_directory:=/home/farness/Téléchargements/csv_point_clouds \
-         -p publish_rate:=10
+```bash
+ros2 run farness_dicp farness_dicp_node \
+  --ros-args \
+  -p frames_directory:=/home/farness/Téléchargements/csv_point_clouds \
+  -p publish_rate:=10
 
 Make sure the directory contains .csv LiDAR frames with the format: x, y, z, v_radial
 
 
-+ option 2 - Launch via launch file
+### option 2 - Launch via launch file
   
-     ```bash
-     ros2 launch farness_dicp dicp_stitcher.launch.py
+```bash
+ros2 launch farness_dicp dicp_stitcher.launch.py
 
 ## Visualization in Foxglove Studio
      

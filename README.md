@@ -109,9 +109,8 @@ ros2 run farness_dicp farness_dicp_node \
   --ros-args \
   -p frames_directory:=/home/farness/Téléchargements/csv_point_clouds \
   -p publish_rate:=10 ```
-
+  ```
 Make sure the directory contains .csv LiDAR frames with the format: x, y, z, v_radial
-   ```
 
 
 ### option 2 - Launch via launch file
@@ -126,7 +125,8 @@ This package comes with a preconfigured **Foxglove Studio layout** (`voyant lida
 To visualize the stitched point cloud, pose, and trajectory:
     
 1. **Run the Doppler-ICP node**:
-       ```bash
+       
+   ```bash
       ros2 run farness_dicp farness_dicp_node \
         --ros-args \
         -p frames_directory:=/home/farness/Téléchargements/csv_point_clouds
@@ -207,17 +207,17 @@ the intensity field for visualization.
        
 **Identified Limitations**
         
-*The number of stitched frames grows indefinitely, which can lead to memory
-saturation.
-*The CSV format only supports v_radial, and richer LiDAR data (vx, vy, vz,
-intensity,timestamp) is not yet exploited.
+`The number of stitched frames grows indefinitely, which can lead to memory
+saturation.`
+`The CSV format only supports v_radial, and richer LiDAR data (vx, vy, vz,
+intensity,timestamp) is not yet exploited`
 
 **Next Steps**
        
-- Frame Limiting Parameter
+` Frame Limiting Parameter`
 Introduce a parameter n to restrict the number of stitched frames kept in memory.
 
-- Raw Data Integration :
+` Raw Data Integration `
 Modify the code so that it accepts .bin files as input instead of CSV directly:
 
 ==> A conversion module will be implemented inside the pipeline to automatically

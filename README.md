@@ -193,15 +193,16 @@ To visualize the stitched point cloud, pose, and trajectory:
        
     ```bash
    colcon test --packages-select farness_dicp
-   colcon test-result --verbose        ```
+   colcon test-result --verbose        
+    ```
  
 ## Development Notes
          
 The Doppler-ICP stitching pipeline has been implemented and validated using
 CSV files with the structure:
                             ` x, y, z, v_radial`
--`Each file corresponds to a single LiDAR frame.`
--`The stitched cloud is published in ROS 2, where v_radial is currently mapped into
+- `Each file corresponds to a single LiDAR frame.`
+- `The stitched cloud is published in ROS 2, where v_radial is currently mapped into
 the intensity field for visualization.`
        
 **Identified Limitations**
@@ -209,7 +210,7 @@ the intensity field for visualization.`
 - `The number of stitched frames grows indefinitely, which can lead to memory
 saturation.`
 - `The CSV format only supports v_radial, and richer LiDAR data (vx, vy, vz,
-intensity,timestamp) is not yet exploited`
+intensity,timestamp) is not yet exploited>`
 
 **Next Steps**
        

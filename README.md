@@ -157,44 +157,44 @@ To visualize the stitched point cloud, pose, and trajectory:
     
 ## Published Topics
    
-/stitched_cloud : sensor_msgs/PointCloud2
+- /stitched_cloud : sensor_msgs/PointCloud2
 
-/icp_pose ; geometry_msgs/PoseStamped
+- /icp_pose ; geometry_msgs/PoseStamped
 
-/icp_trajectory : geometry_msgs/PoseArray
+- /icp_trajectory : geometry_msgs/PoseArray
 
-/linear_acceleration : geometry_msgs/Vector3Stamped
+- /linear_acceleration : geometry_msgs/Vector3Stamped
 
-/angular_velocity : geometry_msgs/Vector3Stamped
+- /angular_velocity : geometry_msgs/Vector3Stamped
 
 **Parameters (config/dicp_params.yaml)**
       
-frames_directory : path to LiDAR frame CSV/inputs
+- frames_directory : path to LiDAR frame CSV/inputs
 
-publish_rate : frequency of publishing (Hz)
+- publish_rate : frequency of publishing (Hz)
 
-downsample_factor : voxel/downsampling factor
+- downsample_factor : voxel/downsampling factor
 
-max_iterations : max ICP iterations
+- max_iterations : max ICP iterations
 
-icp_tolerance : convergence threshold
+- icp_tolerance : convergence threshold
 
-lambda_doppler_start / end : Doppler constraint weights
+- lambda_doppler_start / end : Doppler constraint weights
 
-reject_outliers : enable/disable outlier filtering
+- reject_outliers : enable/disable outlier filtering
 
-max_corr_distance : nearest-neighbor threshold
+- max_corr_distance : nearest-neighbor threshold
 
-min_inliers : minimum correspondences for stability
+- min_inliers : minimum correspondences for stability
 
 (See dicp_params.yaml for the full list of tunable parameters.)
 
 ## Testing
        
-   ```bash
+    ```bash
    colcon test --packages-select farness_dicp
    colcon test-result --verbose      
- ```
+    ```
  
 ## Development Notes
          
@@ -207,17 +207,17 @@ the intensity field for visualization.
        
 **Identified Limitations**
         
-`The number of stitched frames grows indefinitely, which can lead to memory
+- `The number of stitched frames grows indefinitely, which can lead to memory
 saturation.`
-`The CSV format only supports v_radial, and richer LiDAR data (vx, vy, vz,
+- `The CSV format only supports v_radial, and richer LiDAR data (vx, vy, vz,
 intensity,timestamp) is not yet exploited`
 
 **Next Steps**
        
-` Frame Limiting Parameter`
+- ` Frame Limiting Parameter`
 Introduce a parameter n to restrict the number of stitched frames kept in memory.
 
-` Raw Data Integration `
+- ` Raw Data Integration `
 Modify the code so that it accepts .bin files as input instead of CSV directly:
 
 ==> A conversion module will be implemented inside the pipeline to automatically

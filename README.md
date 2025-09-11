@@ -169,7 +169,7 @@ intensity,timestamp) is not yet exploited.
 -Modify the code so that it accepts .bin files as input instead of CSV directly:
 
 ==> A conversion module will be implemented inside the pipeline to automatically
-transform .bin frames into the extended CSV forma
+transform .bin frames into the extended CSV format.
 
 ## License
 

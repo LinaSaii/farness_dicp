@@ -58,15 +58,15 @@ class MultiTopicListener(Node):
 
     # --- Callbacks ---
     def cloud_cb(self, msg):
-        self.get_logger().info("✅ Received stitched cloud")
+        self.get_logger().info(" Received stitched cloud")
         self.cloud_received = True
 
     def pose_cb(self, msg):
-        self.get_logger().info("✅ Received current pose")
+        self.get_logger().info(" Received current pose")
         self.pose_received = True
 
     def traj_cb(self, msg):
-        self.get_logger().info("✅ Received trajectory")
+        self.get_logger().info(" Received trajectory")
         self.traj_received = True
 
     # --- Spin until all topics are seen ---
@@ -93,7 +93,7 @@ class MultiTopicListener(Node):
             elif isinstance(node_value, int):
                 expected_value = int(expected_value)
             assert node_value == expected_value, (
-                f"❌ Param {param}={node_value}, expected {expected_value}"
+                f" Param {param}={node_value}, expected {expected_value}"
             )
 
     # --- Change parameters dynamically ---
@@ -124,7 +124,7 @@ class MultiTopicListener(Node):
 
         # Re-check param value
         result = self.get_parameter(param).value
-        assert result == new_value, f"❌ Param {param} failed to update (got {result})"
+        assert result == new_value, f" Param {param} failed to update (got {result})"
 
 
 @launch_testing.markers.keep_alive
@@ -136,9 +136,9 @@ def test_all_topics_and_params():
 
     # --- Spin and check topics ---
     cloud_ok, pose_ok, traj_ok = listener.spin_until_all_received()
-    assert cloud_ok, "❌ No /stitched_cloud messages received"
-    assert pose_ok, "❌ No /current_pose messages received"
-    assert traj_ok, "❌ No /trajectory messages received"
+    assert cloud_ok, " No /stitched_cloud messages received"
+    assert pose_ok, " No /current_pose messages received"
+    assert traj_ok, " No /trajectory messages received"
 
     # --- Check parameters (values from YAML, type auto-corrected) ---
     expected = {
@@ -169,6 +169,6 @@ def test_dynamic_parameter_update():
 
     # Verify update applied
     result = listener.get_parameter("publish_rate").value
-    assert result == new_rate, f"❌ Dynamic update failed: publish_rate={result}"
+    assert result == new_rate, f" Dynamic update failed: publish_rate={result}"
 
     rclpy.shutdown()
